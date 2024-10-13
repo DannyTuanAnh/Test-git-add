@@ -15,7 +15,7 @@ while True:
         if 1900 <= year <= 10**5:
             leap(year)
         else:
-            print("Please enter 1900 <= year <= 10^5: ")
+            print("Please enter 1900 <= year <= 10^5.")
     except ValueError:
         print("Invalid!")
         continue 
