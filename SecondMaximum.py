@@ -16,7 +16,7 @@ def runner_up_score(arr):
         else:
             print("This is emty!")
     else:
-        print("Invalid score!")
+        print("Invalid score! Try again.")
         
 while True:
     try:      
