@@ -3,10 +3,24 @@ def average(scores):
     return f"{average:.2f}"
     
 students = {}
-n = int(input())
-for x in range (n):
-    name, *score = input().split()
-    scores = list(map(float, score))
-    students[name] = average(scores)
-query_name = input().strip()
-print(f"{students.get(query_name)}")
+while True:
+    n = int(input("Enter n: "))
+    try:
+        if 2 <= n <= 10:
+            for x in range (n):
+                name, *score = input(f"Student {x + 1}: ").split()
+                scores = list(map(float, score))
+                if all(0 <= score <= 100 for score in scores) : 
+                    students[name] = average(scores)
+                else:
+                    print("Exceed value!!!")
+                    break 
+            else:
+                query_name = input().strip()
+                print(f"{students.get(query_name)}")
+        else:
+            print("Just in 2 <= n <= 10.")
+            continue
+    except ValueError:
+        print("Invalid!")
+        continue
