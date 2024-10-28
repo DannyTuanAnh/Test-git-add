@@ -1,7 +1,7 @@
 def average(scores):
     average = sum(scores)/len(scores)
     return f"{average:.2f}"
-    
+     
 students = {}
 while True:
     n = int(input("Enter n: "))
@@ -16,8 +16,8 @@ while True:
                     print("Exceed value!!!")
                     break 
             else:
-                query_name = input().strip()
-                print(f"{students.get(query_name)}")
+                query_name = input("Enter your name you need to find: ").strip()
+                print(f"Point is: {students.get(query_name)}")
         else:
             print("Just in 2 <= n <= 10.")
             continue
