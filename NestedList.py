@@ -7,14 +7,17 @@ def lowest_score(low):
 def second_lowest_score(students):
     sort_number = seperate_number(students)
     if sort_number != []:
-        lowest = lowest_score(sort_number)
-        second_lowest = [x for x in sort_number if x != lowest]
-        second_name = [name for name, score in students if score == lowest_score(second_lowest)]
-        second_name.sort()
-        print("Second lowest score is: ", end = "")
-        print(lowest_score(second_lowest))
-        print("Student have second lowest score is: ", end = "")
-        print(', '.join(second_name))
+        if all(x == sort_number[0] for x in sort_number):
+            print("No student have second lowest score.")
+        else:
+            lowest = lowest_score(sort_number)
+            second_lowest = [x for x in sort_number if x != lowest]
+            second_name = [name for name, score in students if score == lowest_score(second_lowest)]
+            second_name.sort()
+            print("Second lowest score is: ", end = "")
+            print(lowest_score(second_lowest))
+            print("Student have second lowest score is: ", end = "")
+            print(', '.join(second_name))
     else:
         print("Score have problem!")
         
